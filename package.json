@@ -1,0 +1,17 @@
+{
+  "name": "dogshow",
+  "version": "1.0.0",
+  "description": "puppies are life",
+  "main": "index.js",
+  "scripts": {
+    "test": "tester"
+  },
+  "author": "Naseem And Derek",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.7",
+    "mongoose-random": "^0.1.1"
+  }
+}
