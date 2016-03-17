@@ -12,7 +12,7 @@ function createContainer() {
   let entries   = [
     'app.js',
     'controllers',
-    'models',
+    'mongo',
   ];
 
   // load each entry as a module or a directory
