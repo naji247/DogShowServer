@@ -85,7 +85,16 @@ module.exports = function dogsController(
   }
 
   function getRivals(req, res) {
-    var response = {};
-    res.json(response);
-  } 
+    var response = null;
+		mongo.dog.aggregate(
+			[ { $sample: { size: 2} } ], function(err, dogs) {
+			if(err) {
+				response = {"error": true, "message": err.message};
+				res.json(response);
+			} else {
+				response = {"error": false, "dogs": dogs};
+				res.json(response);
+			}
+		});
+	} 
 }
