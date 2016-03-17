@@ -2,14 +2,19 @@
   "name": "dogshow",
   "version": "1.0.0",
   "description": "puppies are life",
-  "main": "index.js",
+  "main": "dogshow.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naji247/DogShowServer"
+  },
   "scripts": {
-    "test": "tester"
+    "start": "nodemon ."
   },
   "author": "Naseem And Derek",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "dependable": "^0.2.5",
     "express": "^4.13.4",
     "mongoose": "^4.4.7",
     "mongoose-random": "^0.1.1"
