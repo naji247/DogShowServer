@@ -1,3 +1,6 @@
+# takes in a number of parameters regarding the tumblr page to be scraped
+# outputs a csv containing the urls of the pictures of puppies
+
 import urllib.request
 import re
 import csv
@@ -8,7 +11,7 @@ page_low = 510
 page_high = 1974
 url = "http://puppiesarecute.tumblr.com/"
 pattern = "<img src=\"([a-zA-z0-9:/._]*?)\" width=\"400\" border=\"0\">"
-dest = 'raw_dog_1.csv'
+dest = 'raw_dog_1.txt'
 
 
 def getImageInfo(data):
