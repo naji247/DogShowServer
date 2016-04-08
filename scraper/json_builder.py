@@ -8,16 +8,23 @@ import re
 TUMBLR_PATTERN = re.compile("http://[0-9]{2}.media.tumblr.com/([a-z0-9]+?)/.+?")
 
 raw_names = ['raw_dog_1.txt', 'raw_dog_0.txt']
+blacklist_name = 'blacklist.txt'
 json_name = 'puppy_seed_1.json'
 
-def raw_to_json(raw_names, json_name):
+def raw_to_json(raw_names, blacklist_name, json_name):
 	destination = open( json_name, 'w')
 	count = 0
 	unique_links = set()
 	tumblr_set = set()
 	json_list = []
+
+	f = open(blacklist_name, 'r')
+	blacklist = list(f.read().splitlines())
+	for bad_img in blacklist:
+		tumblr_set.add(bad_img)
+		
 	for raw_name in raw_names:
-		f = open( raw_name, 'r' )
+		f = open(raw_name, 'r' )
 		src_list = list(f.read().splitlines())
 		def jsonify(src):
 			nonlocal count
@@ -45,4 +52,4 @@ def raw_to_json(raw_names, json_name):
 	destination.write(out)
 	destination.close()
 
-raw_to_json(raw_names, json_name)
+raw_to_json(raw_names, blacklist_name, json_name)
